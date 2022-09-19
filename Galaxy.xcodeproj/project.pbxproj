@@ -11,7 +11,6 @@
 		E264A10028D3704C00E8540A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A0FF28D3704C00E8540A /* SceneDelegate.swift */; };
 		E264A10228D3704C00E8540A /* GalaxyListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A10128D3704C00E8540A /* GalaxyListsViewController.swift */; };
 		E264A10528D3704C00E8540A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E264A10328D3704C00E8540A /* Main.storyboard */; };
-		E264A10828D3704D00E8540A /* Galaxy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E264A10628D3704D00E8540A /* Galaxy.xcdatamodeld */; };
 		E264A10A28D3707000E8540A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E264A10928D3707000E8540A /* Assets.xcassets */; };
 		E264A10D28D3707000E8540A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E264A10B28D3707000E8540A /* LaunchScreen.storyboard */; };
 		E264A11528D3736000E8540A /* GalaxyListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A11428D3736000E8540A /* GalaxyListsPresenter.swift */; };
@@ -21,6 +20,11 @@
 		E264A12028D3765C00E8540A /* GalaxyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A11F28D3765C00E8540A /* GalaxyData.swift */; };
 		E264A12228D37F2E00E8540A /* GalaxyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A12128D37F2E00E8540A /* GalaxyTableViewCell.swift */; };
 		E264A12428D3988E00E8540A /* AddNewPlanetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A12328D3988E00E8540A /* AddNewPlanetPresenter.swift */; };
+		E26E521B28D6E49500BD5327 /* DatabaseService.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E26E521928D6E49500BD5327 /* DatabaseService.xcdatamodeld */; };
+		E26E525428D7A8FD00BD5327 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E525328D7A8FC00BD5327 /* DataManager.swift */; };
+		E29D8E5D28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */; };
+		E29D8E5E28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */; };
+		E29F59C128D62C0B00AD62F2 /* ChooseImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +33,6 @@
 		E264A0FF28D3704C00E8540A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E264A10128D3704C00E8540A /* GalaxyListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyListsViewController.swift; sourceTree = "<group>"; };
 		E264A10428D3704C00E8540A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E264A10728D3704D00E8540A /* Galaxy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Galaxy.xcdatamodel; sourceTree = "<group>"; };
 		E264A10928D3707000E8540A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E264A10C28D3707000E8540A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E264A10E28D3707000E8540A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		E264A11F28D3765C00E8540A /* GalaxyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyData.swift; sourceTree = "<group>"; };
 		E264A12128D37F2E00E8540A /* GalaxyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyTableViewCell.swift; sourceTree = "<group>"; };
 		E264A12328D3988E00E8540A /* AddNewPlanetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlanetPresenter.swift; sourceTree = "<group>"; };
+		E26E521A28D6E49500BD5327 /* DatabaseService.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseService.xcdatamodel; sourceTree = "<group>"; };
+		E26E525328D7A8FC00BD5327 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,9 @@
 		E264A0F128D3704C00E8540A = {
 			isa = PBXGroup;
 			children = (
+				E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */,
+				E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */,
+				E26E522728D6E8EF00BD5327 /* GalaxyService */,
 				E264A0FC28D3704C00E8540A /* Galaxy */,
 				E264A0FB28D3704C00E8540A /* Products */,
 			);
@@ -81,8 +92,8 @@
 				E264A10928D3707000E8540A /* Assets.xcassets */,
 				E264A10B28D3707000E8540A /* LaunchScreen.storyboard */,
 				E264A10E28D3707000E8540A /* Info.plist */,
-				E264A10628D3704D00E8540A /* Galaxy.xcdatamodeld */,
 				E264A11F28D3765C00E8540A /* GalaxyData.swift */,
+				E26E521928D6E49500BD5327 /* DatabaseService.xcdatamodeld */,
 			);
 			path = Galaxy;
 			sourceTree = "<group>";
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E264A11428D3736000E8540A /* GalaxyListsPresenter.swift */,
+				E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */,
 				E264A10128D3704C00E8540A /* GalaxyListsViewController.swift */,
 				E264A12128D37F2E00E8540A /* GalaxyTableViewCell.swift */,
 			);
@@ -113,6 +125,14 @@
 				E264A12328D3988E00E8540A /* AddNewPlanetPresenter.swift */,
 			);
 			path = AddNewPlanet;
+			sourceTree = "<group>";
+		};
+		E26E522728D6E8EF00BD5327 /* GalaxyService */ = {
+			isa = PBXGroup;
+			children = (
+				E26E525328D7A8FC00BD5327 /* DataManager.swift */,
+			);
+			path = GalaxyService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,12 +210,16 @@
 				E264A10228D3704C00E8540A /* GalaxyListsViewController.swift in Sources */,
 				E264A12428D3988E00E8540A /* AddNewPlanetPresenter.swift in Sources */,
 				E264A11E28D3749100E8540A /* AddNewPlanetViewController.swift in Sources */,
+				E29F59C128D62C0B00AD62F2 /* ChooseImagePicker.swift in Sources */,
 				E264A12228D37F2E00E8540A /* GalaxyTableViewCell.swift in Sources */,
 				E264A12028D3765C00E8540A /* GalaxyData.swift in Sources */,
 				E264A11528D3736000E8540A /* GalaxyListsPresenter.swift in Sources */,
-				E264A10828D3704D00E8540A /* Galaxy.xcdatamodeld in Sources */,
+				E26E521B28D6E49500BD5327 /* DatabaseService.xcdatamodeld in Sources */,
+				E29D8E5E28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift in Sources */,
 				E264A11B28D3743F00E8540A /* DetailGalaxyPresenter.swift in Sources */,
 				E264A0FE28D3704C00E8540A /* AppDelegate.swift in Sources */,
+				E26E525428D7A8FD00BD5327 /* DataManager.swift in Sources */,
+				E29D8E5D28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift in Sources */,
 				E264A10028D3704C00E8540A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,13 +442,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E264A10628D3704D00E8540A /* Galaxy.xcdatamodeld */ = {
+		E26E521928D6E49500BD5327 /* DatabaseService.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E264A10728D3704D00E8540A /* Galaxy.xcdatamodel */,
+				E26E521A28D6E49500BD5327 /* DatabaseService.xcdatamodel */,
 			);
-			currentVersion = E264A10728D3704D00E8540A /* Galaxy.xcdatamodel */;
-			path = Galaxy.xcdatamodeld;
+			currentVersion = E26E521A28D6E49500BD5327 /* DatabaseService.xcdatamodel */;
+			path = DatabaseService.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

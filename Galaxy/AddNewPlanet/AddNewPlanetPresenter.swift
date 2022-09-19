@@ -9,18 +9,17 @@ import Foundation
 import UIKit
 protocol AddNewPlanetPresenterView: AnyObject {
     func addPlanet()
+
 }
-class AddNewPlanetPresenter {
+class AddNewPlanetPresenter: NSObject {
     private var view: AddNewPlanetPresenterView?
     init(with view: AddNewPlanetPresenterView) {
         self.view = view
     }
-    func addNewPlanet(title: String, description: String) -> GalaxyLits {
-        let data = GalaxyLits(description: description, img: "asd", title: title)
+    func addNewPlanet(title: String, img: Data, planetdescription: String) -> GalaxyLits {
+        let data = GalaxyLits(planetdescription: planetdescription, img: img , title: title)
         return data
     }
-    func choosesImage(){
-        
-    }
-    
+
+
 }

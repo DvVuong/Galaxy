@@ -9,6 +9,8 @@ import Foundation
 protocol GalaxyListsPresenterView : AnyObject {
     func loadData()
     func addNewPlanet()
+    func deletePlanet( at index: Int)
+    func updatePlanets()
 }
 class GalaxyListsPresenter {
     private var galaxyArr = [GalaxyLits]()
@@ -18,10 +20,11 @@ class GalaxyListsPresenter {
         self.view = view
     }
     func showGalaxyLists(){
-        let galaxy = GalaxyLits(description: "Moon", img: "Moon", title: "Moon")
-        let galaxy2 = GalaxyLits(description: "Mars", img: "Mars", title: "Mars")
-        galaxyArr.append(galaxy)
-        galaxyArr.append(galaxy2)
+//        let galaxy = GalaxyLits(description: "Moon", img: "Moon", title: "Moon")
+//        let galaxy2 = GalaxyLits(description: "Mars", img: "Mars", title: "Mars")
+//        galaxyArr.append(galaxy)
+//        galaxyArr.append(galaxy2)
+         galaxyArr  = DataManager.sharedInstance.getNewPlanet()
         view.loadData()
     }
     func numberOfRow() -> Int {
@@ -34,7 +37,23 @@ class GalaxyListsPresenter {
         return galaxyArr[index]
     }
     func addPlanet(data: GalaxyLits) {
-        galaxyArr.append(data)
+        galaxyArr.insert(data, at: 0)
+        DataManager.sharedInstance.saveTitleDescription(data: data)
         view?.addNewPlanet()
+        
+    }
+    
+    func updatePlanet(data: GalaxyLits, index : Int) {
+        guard let id = data.id else { return }
+        galaxyArr[index] = data
+        DataManager.sharedInstance.updatePlanet(data: data, with: id)
+        view.updatePlanets()
+        
+    }
+    func deletePlane(index: Int){
+        guard  let id = itemForRowAt(index)?.id  else {return}
+        DataManager.sharedInstance.deletePlanet(id: id)
+        galaxyArr.remove(at: index)
+        view?.deletePlanet(at: index)
     }
 }

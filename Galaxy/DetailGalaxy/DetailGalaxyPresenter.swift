@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 protocol DetailGalaxyPresenterView: AnyObject {
     func loadData( data: GalaxyLits)
 }
@@ -20,5 +21,12 @@ class DetailGalaxyPresenter {
     
     func showPlanet(){
         view?.loadData( data: planet)
+    }
+    
+    func editPlanet(planetDescription: String , imagePlanet : Data) -> GalaxyLits {
+        planet.planetdescription = planetDescription
+        planet.img = imagePlanet
+        
+        return planet
     }
 }

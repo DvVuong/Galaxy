@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 struct GalaxyLits {
-    let description: String
-    let img: String
-    let title: String
+    var planetdescription: String
+    var img: Data? 
+    var title: String
+    var id: NSManagedObjectID? = nil
 }

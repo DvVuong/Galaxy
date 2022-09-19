@@ -25,7 +25,7 @@ class GalaxyTableViewCell: UITableViewCell {
     }
     func updateUI(_ data: GalaxyLits){
         lbTitle.text = data.title
-        imgGalaxy.image = UIImage(named: data.img)
+        imgGalaxy.image = UIImage(data: data.img!)
     }
 
 }

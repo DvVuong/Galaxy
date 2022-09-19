@@ -15,9 +15,19 @@ class GalaxyListsViewController: UIViewController{
         // Do any additional setup after loading the view.
         setupTbGalaxy()
         presenter.showGalaxyLists()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(didTapMe))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sort", style: .done, target: self, action: #selector(ditaptrash))
+    }
+
+    @objc func ditaptrash(){
+        if tbGalaxy.isEditing {
+            tbGalaxy.isEditing = false
+        }else {
+            tbGalaxy.isEditing = true
+        }
     }
     @objc func didTapMe(){
         let vc = AddNewPlanetViewController.instance()
@@ -50,8 +60,23 @@ extension GalaxyListsViewController: UITableViewDelegate, UITableViewDataSource 
         vc.title = presenter.itemForRowAt(indexPath.row)?.title
         navigationController?.pushViewController(vc, animated: true)
     }
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deletePlane(index: indexPath.row)
+        }
+    }
 }
 extension GalaxyListsViewController: GalaxyListsPresenterView {
+    func updatePlanets() {
+        tbGalaxy.reloadData()
+    }
+    
+    func deletePlanet(at index: Int) {
+        tbGalaxy.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
     func addNewPlanet() {
         tbGalaxy.reloadData()
     }
@@ -62,12 +87,18 @@ extension GalaxyListsViewController: GalaxyListsPresenterView {
 }
 extension GalaxyListsViewController: DetailGalaxyViewControllerDelegate {
     func detailGalaxyViewController(_ vc: DetailGalaxyViewController, data: GalaxyLits) {
-        print("asd")
+        if let indexPath = tbGalaxy.indexPathForSelectedRow {
+            presenter.updatePlanet(data: data, index: indexPath.row)
+        }
+        navigationController?.popViewController(animated: true)
+        
     }
-    
-    
 }
 extension GalaxyListsViewController: AddNewPlanetViewControllerDelegate {
+    func addNewPlanetViewController(_ vc: AddNewPlanetViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: GalaxyLits) {
         presenter.addPlanet(data: didAdd)
         navigationController?.popViewController(animated: true)
