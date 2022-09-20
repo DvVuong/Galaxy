@@ -13,4 +13,5 @@ struct GalaxyLits {
     var img: Data? 
     var title: String
     var id: NSManagedObjectID? = nil
+    var timeDay: Date?
 }

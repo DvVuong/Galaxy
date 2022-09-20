@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 protocol AddNewPlanetPresenterView: AnyObject {
-    func addPlanet()
 
 }
 class AddNewPlanetPresenter: NSObject {
@@ -16,9 +15,15 @@ class AddNewPlanetPresenter: NSObject {
     init(with view: AddNewPlanetPresenterView) {
         self.view = view
     }
-    func addNewPlanet(title: String, img: Data, planetdescription: String) -> GalaxyLits {
-        let data = GalaxyLits(planetdescription: planetdescription, img: img , title: title)
+    func addNewPlanet(title: String, img: Data, planetdescription: String, time: Date) -> GalaxyLits {
+        let data = GalaxyLits(planetdescription: planetdescription, img: img , title: title, timeDay: time)
         return data
+    }
+    
+    func convertImgaeToBase64(image: UIImage) -> String {
+        
+        
+        return ""
     }
 
 

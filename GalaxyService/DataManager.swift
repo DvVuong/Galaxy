@@ -21,6 +21,7 @@ open class DataManager: NSObject {
         titleGalaxy.title = data.title
         titleGalaxy.titledescription = data.planetdescription
         titleGalaxy.image = data.img
+        titleGalaxy.date = data.timeDay
         //
         saveContext()
     }
@@ -30,14 +31,15 @@ open class DataManager: NSObject {
             updataPlanets.title = data.title
             updataPlanets.titledescription = data.planetdescription
             updataPlanets.image = data.img
+            updataPlanets.date = data.timeDay
         }
         saveContext()
     }
     
     func getNewPlanet() -> [GalaxyLits] {
          var arrListGalaxy: [GalaxyLits] = [GalaxyLits]()
-         let galaxyFtech: NSFetchRequest<GalaxyEntity> = GalaxyEntity.fetchRequest()
-         let sort = NSSortDescriptor(key: #keyPath(GalaxyEntity.title), ascending: true)
+        let galaxyFtech: NSFetchRequest<GalaxyEntity> = GalaxyEntity.fetchRequest()
+        let sort = NSSortDescriptor(key: #keyPath(GalaxyEntity.date), ascending: false)
          galaxyFtech.sortDescriptors = [sort]
         do {
             let result = try context.fetch(galaxyFtech)
@@ -45,9 +47,10 @@ open class DataManager: NSObject {
                 let newPlanet = GalaxyLits(planetdescription: item.titledescription ?? "" ,
                                            img:item.image,
                                            title: item.title ?? "",
-                                           id: item.objectID )
+                                           id: item.objectID,
+                                           timeDay: item.date )
                 arrListGalaxy.append(newPlanet)
-                print(arrListGalaxy.count)
+                
             }
             return arrListGalaxy
         }

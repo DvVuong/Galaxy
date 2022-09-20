@@ -30,7 +30,6 @@ class AddNewPlanetViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imgPlanet.image = UIImage(named: "placeholder")
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply,
                                                            target: self,
@@ -52,9 +51,9 @@ class AddNewPlanetViewController: UIViewController {
             return
         }
         else{
-            
             if let imageData = imgPlanet.image?.pngData() {
-                let item =  presenter.addNewPlanet(title: tfTitle.text!, img: imageData , planetdescription: tfDescription.text!)
+                let date = Date()
+                let item =  presenter.addNewPlanet(title: tfTitle.text!, img: imageData , planetdescription: tfDescription.text!,  time: date )
                 addPlanetdelegate?.addNewPlanetViewController(self, didAdd: item)
             }
         }
@@ -87,12 +86,6 @@ class AddNewPlanetViewController: UIViewController {
     }
 }
 extension AddNewPlanetViewController: AddNewPlanetPresenterView {
-    func showImagePlanet() {
-        print("asd")
-    }
-    func addPlanet() {
-        print("asd")
-    }
 }
 extension AddNewPlanetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

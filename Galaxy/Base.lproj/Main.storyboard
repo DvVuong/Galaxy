@@ -184,7 +184,7 @@
                     </view>
                     <connections>
                         <outlet property="imgPlanet" destination="F8D-M6-N42" id="3rb-nl-6sY"/>
-                        <outlet property="tfDescription" destination="EoB-bs-y3t" id="f9P-pM-5Rv"/>
+                        <outlet property="tfDescription" destination="EoB-bs-y3t" id="Aqf-vg-LVg"/>
                         <outlet property="tfTitle" destination="ABH-Eb-WDj" id="XG9-nF-8hB"/>
                     </connections>
                 </viewController>

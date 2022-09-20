@@ -19,6 +19,7 @@ extension GalaxyEntity {
     @NSManaged public var image: Data?
     @NSManaged public var title: String?
     @NSManaged public var titledescription: String?
+    @NSManaged public var date: Date?
 
 }
 

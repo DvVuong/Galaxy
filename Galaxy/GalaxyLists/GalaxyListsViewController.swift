@@ -21,6 +21,11 @@ class GalaxyListsViewController: UIViewController{
                                                             action: #selector(didTapMe))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sort", style: .done, target: self, action: #selector(ditaptrash))
     }
+    override func viewWillAppear(_ animated: Bool) {
+        if let indexPath = tbGalaxy.indexPathForSelectedRow {
+            tbGalaxy.deselectRow(at: indexPath, animated: true)
+        }
+    }
 
     @objc func ditaptrash(){
         if tbGalaxy.isEditing {
@@ -63,6 +68,9 @@ extension GalaxyListsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         true
     }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             presenter.deletePlane(index: indexPath.row)
@@ -70,6 +78,11 @@ extension GalaxyListsViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 extension GalaxyListsViewController: GalaxyListsPresenterView {
+    func addNewPlanet() {
+        tbGalaxy.reloadData()
+    }
+    
+    
     func updatePlanets() {
         tbGalaxy.reloadData()
     }
@@ -77,9 +90,15 @@ extension GalaxyListsViewController: GalaxyListsPresenterView {
     func deletePlanet(at index: Int) {
         tbGalaxy.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
-    func addNewPlanet() {
-        tbGalaxy.reloadData()
-    }
+//    func addNewPlanet(count: Int) {
+//        let firstNewIndex = tableView(tbGalaxy , numberOfRowsInSection: 0) - count
+//        var indexPaths: [IndexPath]  = []
+//        for i in 0..<count {
+//            indexPaths.append(IndexPath(row: i + firstNewIndex, section: 0))
+//        }
+//        tbGalaxy.insertRows(at: indexPaths, with: .automatic)
+//
+//    }
     
     func loadData() {
         tbGalaxy.reloadData()
@@ -95,14 +114,17 @@ extension GalaxyListsViewController: DetailGalaxyViewControllerDelegate {
     }
 }
 extension GalaxyListsViewController: AddNewPlanetViewControllerDelegate {
-    func addNewPlanetViewController(_ vc: AddNewPlanetViewController) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: GalaxyLits) {
         presenter.addPlanet(data: didAdd)
         navigationController?.popViewController(animated: true)
     }
+    
+   
+    func addNewPlanetViewController(_ vc: AddNewPlanetViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     
 }
