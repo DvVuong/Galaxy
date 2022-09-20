@@ -2,7 +2,7 @@
 //  GalaxyEntity+CoreDataClass.swift
 //  Galaxy
 //
-//  Created by mr.root on 9/19/22.
+//  Created by admin on 20/09/2022.
 //
 //
 

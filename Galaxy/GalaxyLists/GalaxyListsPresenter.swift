@@ -13,7 +13,7 @@ protocol GalaxyListsPresenterView : AnyObject {
     func updatePlanets()
 }
 class GalaxyListsPresenter {
-    private var galaxyArr = [GalaxyLits]()
+    private var galaxyArr = [Note]()
     private weak var persenter: GalaxyListsPresenterView?
     private var view: GalaxyListsPresenterView!
     init(with view: GalaxyListsPresenterView) {
@@ -30,20 +30,21 @@ class GalaxyListsPresenter {
     func numberOfRow() -> Int {
         return galaxyArr.count
     }
-    func itemForRowAt(_ index: Int) -> GalaxyLits? {
+    func itemForRowAt(_ index: Int) -> Note? {
         guard  index >= 0 && index < numberOfRow()  else {
             return nil
         }
         return galaxyArr[index]
     }
-    func addPlanet(data: GalaxyLits) {
+    func addPlanet(data: Note) {
         galaxyArr.insert(data, at: 0)
+        print(data.img)
         DataManager.sharedInstance.saveTitleDescription(data: data)
         view?.addNewPlanet()
         
     }
     
-    func updatePlanet(data: GalaxyLits, index : Int) {
+    func updatePlanet(data: Note, index : Int) {
         guard let id = data.id else { return }
         galaxyArr[index] = data
         DataManager.sharedInstance.updatePlanet(data: data, with: id)

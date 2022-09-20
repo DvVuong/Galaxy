@@ -2,7 +2,7 @@
 //  GalaxyEntity+CoreDataProperties.swift
 //  Galaxy
 //
-//  Created by mr.root on 9/19/22.
+//  Created by admin on 20/09/2022.
 //
 //
 
@@ -16,10 +16,10 @@ extension GalaxyEntity {
         return NSFetchRequest<GalaxyEntity>(entityName: "GalaxyEntity")
     }
 
-    @NSManaged public var image: Data?
+    @NSManaged public var date: Date?
+    @NSManaged public var image: String?
     @NSManaged public var title: String?
     @NSManaged public var titledescription: String?
-    @NSManaged public var date: Date?
 
 }
 

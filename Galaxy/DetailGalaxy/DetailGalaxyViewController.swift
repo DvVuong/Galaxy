@@ -7,11 +7,11 @@
 
 import UIKit
 protocol DetailGalaxyViewControllerDelegate: AnyObject {
-    func detailGalaxyViewController(_ vc: DetailGalaxyViewController, data: GalaxyLits)
+    func detailGalaxyViewController(_ vc: DetailGalaxyViewController, data: Note)
 }
 
 class DetailGalaxyViewController: UIViewController {
-    static func instance(_ data: GalaxyLits) -> DetailGalaxyViewController {
+    static func instance(_ data: Note) -> DetailGalaxyViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreen") as! DetailGalaxyViewController
         vc.presenter = DetailGalaxyPresenter(with: vc, planet: data)
         return vc
@@ -33,10 +33,10 @@ class DetailGalaxyViewController: UIViewController {
                                                            action: #selector(didTapEdit))
     }
     @objc func didTapEdit(){
-        if let newImagePlanet = imgPlanets.image?.pngData() {
-            let data =  presenter.editPlanet(planetDescription: tvDescription.text!, imagePlanet: newImagePlanet)
-            delegate?.detailGalaxyViewController(self, data: data)
-        }
+//        if let newImagePlanet = imgPlanets.image?.pngData() {
+//            let data =  presenter.editPlanet(planetDescription: tvDescription.text!, imagePlanet: newImagePlanet)
+//            delegate?.detailGalaxyViewController(self, data: data)
+//        }
     }
     private func setupImgPlanets(){
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(didTapeditImage))
@@ -63,8 +63,8 @@ class DetailGalaxyViewController: UIViewController {
     }
 }
 extension DetailGalaxyViewController: DetailGalaxyPresenterView {
-    func loadData(data: GalaxyLits) {
-        imgPlanets.image = UIImage(data: data.img! as Data)
+    func loadData(data: Note) {
+        imgPlanets.image = data.img
         tvDescription.text = data.planetdescription
     }
 }

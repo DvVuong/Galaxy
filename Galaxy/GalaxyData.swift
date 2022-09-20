@@ -8,10 +8,11 @@
 import Foundation
 import CoreData
 import UIKit
-struct GalaxyLits {
+
+struct Note {
     var planetdescription: String
-    var img: Data? 
+    var img: UIImage?
     var title: String
     var id: NSManagedObjectID? = nil
-    var timeDay: Date?
+    var timeDay: Date
 }

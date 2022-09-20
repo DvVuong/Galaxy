@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A2F2F528D9BD0B009B0F0A /* GalaxyEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2F2F328D9BD0B009B0F0A /* GalaxyEntity+CoreDataClass.swift */; };
+		84A2F2F628D9BD0B009B0F0A /* GalaxyEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2F2F428D9BD0B009B0F0A /* GalaxyEntity+CoreDataProperties.swift */; };
 		E264A0FE28D3704C00E8540A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A0FD28D3704C00E8540A /* AppDelegate.swift */; };
 		E264A10028D3704C00E8540A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A0FF28D3704C00E8540A /* SceneDelegate.swift */; };
 		E264A10228D3704C00E8540A /* GalaxyListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A10128D3704C00E8540A /* GalaxyListsViewController.swift */; };
@@ -22,12 +24,11 @@
 		E264A12428D3988E00E8540A /* AddNewPlanetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264A12328D3988E00E8540A /* AddNewPlanetPresenter.swift */; };
 		E26E521B28D6E49500BD5327 /* DatabaseService.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E26E521928D6E49500BD5327 /* DatabaseService.xcdatamodeld */; };
 		E26E525428D7A8FD00BD5327 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E525328D7A8FC00BD5327 /* DataManager.swift */; };
-		E29D8E5D28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */; };
-		E29D8E5E28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */; };
-		E29F59C128D62C0B00AD62F2 /* ChooseImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84A2F2F328D9BD0B009B0F0A /* GalaxyEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84A2F2F428D9BD0B009B0F0A /* GalaxyEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E264A0FA28D3704C00E8540A /* Galaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E264A0FD28D3704C00E8540A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E264A0FF28D3704C00E8540A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +46,6 @@
 		E264A12328D3988E00E8540A /* AddNewPlanetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlanetPresenter.swift; sourceTree = "<group>"; };
 		E26E521A28D6E49500BD5327 /* DatabaseService.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseService.xcdatamodel; sourceTree = "<group>"; };
 		E26E525328D7A8FC00BD5327 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalaxyEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +62,8 @@
 		E264A0F128D3704C00E8540A = {
 			isa = PBXGroup;
 			children = (
-				E29D8E5B28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift */,
-				E29D8E5C28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift */,
+				84A2F2F328D9BD0B009B0F0A /* GalaxyEntity+CoreDataClass.swift */,
+				84A2F2F428D9BD0B009B0F0A /* GalaxyEntity+CoreDataProperties.swift */,
 				E26E522728D6E8EF00BD5327 /* GalaxyService */,
 				E264A0FC28D3704C00E8540A /* Galaxy */,
 				E264A0FB28D3704C00E8540A /* Products */,
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				E264A11428D3736000E8540A /* GalaxyListsPresenter.swift */,
-				E29F59C028D62C0B00AD62F2 /* ChooseImagePicker.swift */,
 				E264A10128D3704C00E8540A /* GalaxyListsViewController.swift */,
 				E264A12128D37F2E00E8540A /* GalaxyTableViewCell.swift */,
 			);
@@ -210,16 +207,15 @@
 				E264A10228D3704C00E8540A /* GalaxyListsViewController.swift in Sources */,
 				E264A12428D3988E00E8540A /* AddNewPlanetPresenter.swift in Sources */,
 				E264A11E28D3749100E8540A /* AddNewPlanetViewController.swift in Sources */,
-				E29F59C128D62C0B00AD62F2 /* ChooseImagePicker.swift in Sources */,
 				E264A12228D37F2E00E8540A /* GalaxyTableViewCell.swift in Sources */,
 				E264A12028D3765C00E8540A /* GalaxyData.swift in Sources */,
 				E264A11528D3736000E8540A /* GalaxyListsPresenter.swift in Sources */,
 				E26E521B28D6E49500BD5327 /* DatabaseService.xcdatamodeld in Sources */,
-				E29D8E5E28D87CAA00063FA0 /* GalaxyEntity+CoreDataProperties.swift in Sources */,
+				84A2F2F628D9BD0B009B0F0A /* GalaxyEntity+CoreDataProperties.swift in Sources */,
 				E264A11B28D3743F00E8540A /* DetailGalaxyPresenter.swift in Sources */,
 				E264A0FE28D3704C00E8540A /* AppDelegate.swift in Sources */,
 				E26E525428D7A8FD00BD5327 /* DataManager.swift in Sources */,
-				E29D8E5D28D87CAA00063FA0 /* GalaxyEntity+CoreDataClass.swift in Sources */,
+				84A2F2F528D9BD0B009B0F0A /* GalaxyEntity+CoreDataClass.swift in Sources */,
 				E264A10028D3704C00E8540A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

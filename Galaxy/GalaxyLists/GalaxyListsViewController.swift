@@ -105,7 +105,7 @@ extension GalaxyListsViewController: GalaxyListsPresenterView {
     }
 }
 extension GalaxyListsViewController: DetailGalaxyViewControllerDelegate {
-    func detailGalaxyViewController(_ vc: DetailGalaxyViewController, data: GalaxyLits) {
+    func detailGalaxyViewController(_ vc: DetailGalaxyViewController, data: Note) {
         if let indexPath = tbGalaxy.indexPathForSelectedRow {
             presenter.updatePlanet(data: data, index: indexPath.row)
         }
@@ -114,7 +114,7 @@ extension GalaxyListsViewController: DetailGalaxyViewControllerDelegate {
     }
 }
 extension GalaxyListsViewController: AddNewPlanetViewControllerDelegate {
-    func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: GalaxyLits) {
+    func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: Note) {
         presenter.addPlanet(data: didAdd)
         navigationController?.popViewController(animated: true)
     }

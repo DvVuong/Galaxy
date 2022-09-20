@@ -16,39 +16,45 @@ open class DataManager: NSObject {
         return persistentContainer.viewContext
     }
     
-    func saveTitleDescription(data: GalaxyLits) {
+    func saveTitleDescription(data: Note) {
         let titleGalaxy = GalaxyEntity(context: context)
         titleGalaxy.title = data.title
         titleGalaxy.titledescription = data.planetdescription
-        titleGalaxy.image = data.img
+        titleGalaxy.image = convertImgaeToBase64(image: data.img!)
         titleGalaxy.date = data.timeDay
         //
         saveContext()
     }
     
-    func updatePlanet(data: GalaxyLits , with id: NSManagedObjectID) {
-        if let updataPlanets = try? context.existingObject(with: id) as! GalaxyEntity {
+    func updatePlanet(data: Note , with id: NSManagedObjectID) {
+        if let updataPlanets = try? (context.existingObject(with: id) as! GalaxyEntity) {
             updataPlanets.title = data.title
             updataPlanets.titledescription = data.planetdescription
-            updataPlanets.image = data.img
+            updataPlanets.image = convertImgaeToBase64(image: data.img!)
             updataPlanets.date = data.timeDay
         }
         saveContext()
     }
     
-    func getNewPlanet() -> [GalaxyLits] {
-         var arrListGalaxy: [GalaxyLits] = [GalaxyLits]()
+    func convertImgaeToBase64(image: UIImage) -> String {
+        let imageData: Data? = image.jpegData(compressionQuality: 0.4)
+        let imageStr = imageData?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        return imageStr
+    }
+    
+   
+    func getNewPlanet() -> [Note] {
+         var arrListGalaxy: [Note] = [Note]()
         let galaxyFtech: NSFetchRequest<GalaxyEntity> = GalaxyEntity.fetchRequest()
         let sort = NSSortDescriptor(key: #keyPath(GalaxyEntity.date), ascending: false)
          galaxyFtech.sortDescriptors = [sort]
         do {
             let result = try context.fetch(galaxyFtech)
             for item in result {
-                let newPlanet = GalaxyLits(planetdescription: item.titledescription ?? "" ,
-                                           img:item.image,
+                let newPlanet = Note(planetdescription: item.titledescription ?? "", img: convertBase64ToImage(imageString: item.image!),
                                            title: item.title ?? "",
                                            id: item.objectID,
-                                           timeDay: item.date )
+                                           timeDay: item.date! )
                 arrListGalaxy.append(newPlanet)
                 
             }
@@ -59,12 +65,20 @@ open class DataManager: NSObject {
         }
         return []
     }
+    
+    func convertBase64ToImage(imageString: String ) -> UIImage {
+        let imageData = Data(base64Encoded: imageString , options: .ignoreUnknownCharacters)!
+        return UIImage(data: imageData)!
+    }
     func deletePlanet(id: NSManagedObjectID){
         if let object = try? context.existingObject(with: id) {
             context.delete(object)
         }
         saveContext()
     }
+    
+    
+    
 
     // MARK: - Core Data stac
     lazy var persistentContainer: NSPersistentContainer = {

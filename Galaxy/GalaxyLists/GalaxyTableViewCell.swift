@@ -23,9 +23,10 @@ class GalaxyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func updateUI(_ data: GalaxyLits){
+    func updateUI(_ data: Note){
         lbTitle.text = data.title
-        imgGalaxy.image = UIImage(data: data.img!)
+        imgGalaxy.image = data.img
+        
     }
 
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 protocol AddNewPlanetViewControllerDelegate: AnyObject {
-    func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: GalaxyLits)
+    func addNewPlanetViewController(_ vc: AddNewPlanetViewController, didAdd: Note)
     func addNewPlanetViewController(_ vc: AddNewPlanetViewController)
 }
 
@@ -51,10 +51,13 @@ class AddNewPlanetViewController: UIViewController {
             return
         }
         else{
-            if let imageData = imgPlanet.image?.pngData() {
+            if let imageData2 = imgPlanet.image {
                 let date = Date()
-                let item =  presenter.addNewPlanet(title: tfTitle.text!, img: imageData , planetdescription: tfDescription.text!,  time: date )
+                //let imageToBase64 =  presenter.convertImgaeToBase64(image: imageData2)
+                
+                let item = presenter.addNewPlanet(title: tfTitle.text!, img: imageData2, planetdescription: tfDescription.text!, time: date)
                 addPlanetdelegate?.addNewPlanetViewController(self, didAdd: item)
+                
             }
         }
     }
